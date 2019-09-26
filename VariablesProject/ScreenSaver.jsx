@@ -1,9 +1,11 @@
 //on button A set variable A to 1
 input.onButtonPressed(Button.A, function () {
+    B = 0
     A = 1
 })
 //on button B set variable B to 1
 input.onButtonPressed(Button.B, function () {
+    A = 0
     B = 1
 })
 //set variable B to 0
