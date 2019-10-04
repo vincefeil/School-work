@@ -14,6 +14,14 @@ input.onButtonPressed(Button.A, function(){
     } else {
         A = true
     }
+    while (A) {
+        if (N == 0) {
+            N = 255
+        } else {
+            N = 0
+        }
+
+    }
 })
 
 basic.forever(function () {
