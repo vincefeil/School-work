@@ -1,3 +1,4 @@
+input.onGesture(Gesture.Shake, function () {
 //using the for loop to plot squares instead of plotting each diode
 //individualy
 basic.forever(function () {
@@ -62,4 +63,5 @@ basic.forever(function () {
     basic.clearScreen()
     basic.pause(500)
 
+})
 })
