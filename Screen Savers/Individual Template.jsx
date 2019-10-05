@@ -1,8 +1,13 @@
+//set a variable
 let motion = 0
+//gesture that starts it
 input.onGesture(Gesture.Shake, function () {
+    //will not start if this condition not met
     if (motion == 0) {
+        //<= determines how long the program will run
         for (let index2t = 0; index2t <= 5; index2t++) {   
         
+        // start of screen saver that will run
         for (let index = 0; index <= 4; index++) {
                 led.plot(0, index)
         }
@@ -54,5 +59,6 @@ input.onGesture(Gesture.Shake, function () {
         basic.clearScreen()
         basic.pause(500)
         }
+        //end of screen saver
     }
 })
