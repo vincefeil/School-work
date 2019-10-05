@@ -1,7 +1,10 @@
 let blink = 100
-
+let time = 2000
 
 basic.forever(function () {
+    while (time > 0) {
+        time += -500
+    
     led.plotBrightness(0, 0, Math.randomRange(0, 225))
     basic.pause(blink)
     led.plotBrightness(1, 0, Math.randomRange(0, 225))
@@ -52,4 +55,6 @@ basic.forever(function () {
     basic.pause(blink)
     led.plotBrightness(4, 4, Math.randomRange(0, 225))
     basic.pause(blink)
+    }
+    basic.clearScreen()
 })
