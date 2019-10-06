@@ -43,7 +43,6 @@ function bouncingDots () {
         dotTime += -500
     }
 }
-
 let xdot1 = 0
 let dotTime = 0
 let ydot2 = 0
