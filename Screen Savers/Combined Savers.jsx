@@ -9,6 +9,8 @@ input.onButtonPressed(Button.B, function () {
     SquareTimeI = 0
     RandomDotTimeI = 0
     LineTimeI = 0
+    F = 0
+    F2 = 0
 })
 input.onButtonPressed(Button.A, function () {
     F = 1
@@ -413,7 +415,7 @@ function arrowsI() {
     basic.clearScreen()
 }
 input.onGesture(Gesture.Shake, function () {
-    F = 1
+    if (F == 1){
     arrowTime = 0
     dotTime = 0
     dotTimeI = 0
@@ -425,6 +427,7 @@ input.onGesture(Gesture.Shake, function () {
     RandomDotTimeI = 0
     LineTimeI = 0
     arrowsI()
+    }
 })
 function bouncingDots() {
     while (dotTime > 0) {
@@ -574,12 +577,19 @@ basic.forever(function () {
 
 })
 input.onGesture(Gesture.ScreenDown, function () {
-    F = 1
+    if (F == 1) {
     SquareTimeI = 2000
+    arrowTime = 0
+    ArrowTimeI = 0
     SquareTime = 0
     LineTime = 0
+    LineTimeI = 0
+    dotTime = 0
     dotTimeI = 0
+    RandomDotTimeI = 0
+    time = 0
     BlinkingSquaresI()
+    }
 })
 function BlinkingSquaresI() {
     while (SquareTimeI > 0) {
@@ -718,17 +728,20 @@ SquareTimeI = 2000
 F = 0
 
 input.onGesture(Gesture.TiltLeft, function () {
-    F = 1
+    if (F == 1) {
     dotTimeI = 2000
     arrowTime = 0
     dotTime = 0
     LineTime = 0
+    LineTimeI = 0
     SquareTime = 0
     time = 0
     ArrowTimeI = 0
     SquareTimeI = 0
+    RandomDotTimeI = 0
 
     bouncingDotsI()
+    }
 })
 function bouncingDotsI() {
     while (dotTimeI > 0) {
@@ -793,10 +806,20 @@ dotTimeI = 2000
 led.plot(xdot1I, ydot1I)
 led.plot(xdot2I, ydot2I)
 input.onGesture(Gesture.TiltRight, function () {
-    F = 1
+    if (F == 1) {
     blinkI = 100
     RandomDotTimeI = 2000
+    arrowTime = 0
+    ArrowTimeI = 0
+    dotTime = 0
+    dotTimeI = 0
+    LineTime = 0
+    LineTimeI = 0
+    SquareTime = 0
+    SquareTimeI = 0
+    time = 0
     randomdotsI()
+    }
 })
 function randomdotsI() {
     while (RandomDotTimeI > 0) {
@@ -875,11 +898,19 @@ let LineTimeI = 0
 LineTimeI = 2000
 LineSpeedI = 200
 input.onGesture(Gesture.ThreeG, function () {
+    if (F == 1){
     LineTimeI = 2000
     LineSpeedI = 200
-    // arrowTime = 0 dotTime = 0 LineTime = 0 SquareTime =
-    // 0 time = 0
-    F = 1
+    arrowTime = 0
+    ArrowTimeI = 0
+    dotTimeI = 0 
+    dotTime = 0 
+    LineTime = 0 
+    SquareTime = 0
+    SquareTimeI = 0
+    time = 0
+    RandomDotTimeI = 0
+    
     F2 = 1
     while (LineTimeI > 0) {
         if (F2 == 0) {
@@ -930,6 +961,7 @@ input.onGesture(Gesture.ThreeG, function () {
             LineTimeI += -500
         }
     }
+}
     basic.clearScreen()
     CI = 0
 })
