@@ -35,6 +35,7 @@ basic.forever(function () {
     }
     //sets variable to 0 and displays the value of the variable until
     //the A button is pressed and held.
+    stringTime = 5
     time = 5
     buttonPressed = 0
     basic.showString("" + buttonPressed)
