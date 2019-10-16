@@ -9,7 +9,11 @@ function showString () {
         stringTime += -1
     }
     if (input.buttonIsPressed(Button.A)){
-        basic.showString("Let Go")
+        while(input.buttonIsPressed(Button.A)){
+            basic.showString("Let Go")
+
+        }
+        
     }
 }
 //setup variables
