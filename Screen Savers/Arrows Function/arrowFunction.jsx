@@ -1,6 +1,7 @@
 input.onGesture(Gesture.Shake, function () {
-    F = 1
+    if (F == 1){
     arrowsI()
+    }    
 })
 function arrowsI () {
     while (ArrowTimeI > 0) {
