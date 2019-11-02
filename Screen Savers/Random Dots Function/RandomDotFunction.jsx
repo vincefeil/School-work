@@ -1,3 +1,6 @@
+input.onGesture(Gesture.ThreeG, function () {
+    randomdotsI()
+})
 function randomdotsI () {
     while (RandomDotTimeI > 0) {
         if (F == 1) {
@@ -56,9 +59,9 @@ function randomdotsI () {
     }
     basic.clearScreen()
 }
-
 let RandomDotTimeI = 0
 let blinkI = 0
+let F = 0
+F = 1
 blinkI = 100
 RandomDotTimeI = 2000
-
