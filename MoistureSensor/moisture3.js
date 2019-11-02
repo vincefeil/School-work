@@ -1,11 +1,10 @@
-//setting up the variable moisture_reading
 let moisture_reading: number = 0
-
-//bar gragh display function
-function display() {
-    //if takes the value in moisture_reading, remaps it to 0-4, rounds to a whole 
-    //number then compairs it to an integer and displays the corresponding bar
-    //graph if it equals 0 it clears the screen
+// bar gragh display function
+function display () {
+    // if takes the value in moisture_reading, remaps it
+    // to 0-4, rounds to a whole number then compairs it
+    // to an integer and displays the corresponding bar
+    // graph if it equals 0 it clears the screen
     if (Math.round(Math.map(moisture_reading, 0, 1023, 0, 4)) == 4) {
         basic.showLeds(`
             . . . . .
@@ -41,11 +40,11 @@ function display() {
     } else {
         basic.clearScreen()
     }
-
 }
-//on button A pressed and released turns on pin 12 for 1 second which turns on
-//the sensor. pin 0 reads the sensor and writes the data into the variable
-//moisture_reading. then pin 12 is turned off
+// on button A pressed and released turns on pin 12
+// for 1 second which turns on the sensor. pin 0 reads
+// the sensor and writes the data into the variable
+// moisture_reading. then pin 12 is turned off
 input.onButtonPressed(Button.A, function () {
     pins.digitalWritePin(DigitalPin.P12, 1)
     basic.pause(1000)
@@ -53,9 +52,10 @@ input.onButtonPressed(Button.A, function () {
     pins.digitalWritePin(DigitalPin.P12, 0)
     display()
 })
-//every 15 seconds it turns on pin 12 for 1 second which turns on
-//the sensor. pin 0 reads the sensor and writes the data into the variable
-//moisture_reading. then pin 12 is turned off
+// every 15 seconds it turns on pin 12 for 1 second
+// which turns on the sensor. pin 0 reads the sensor
+// and writes the data into the variable
+// moisture_reading. then pin 12 is turned off
 basic.forever(function () {
     pins.digitalWritePin(DigitalPin.P12, 1)
     basic.pause(1000)
@@ -63,6 +63,5 @@ basic.forever(function () {
     pins.digitalWritePin(DigitalPin.P12, 0)
     display()
     basic.pause(15000)
+    serial.writeNumber(moisture_reading)
 })
-
-
