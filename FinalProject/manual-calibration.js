@@ -62,6 +62,6 @@ basic.forever(function () {
     moisture_reading = pins.analogReadPin(AnalogPin.P0)
     pins.digitalWritePin(DigitalPin.P12, 0)
     display()
-    basic.pause(15000)
-    serial.writeNumber(moisture_reading)
+    basic.pause(2000)
+    serial.writeNumber(moisture_reading)//sends data to serial terminal for calibration reading
 })
