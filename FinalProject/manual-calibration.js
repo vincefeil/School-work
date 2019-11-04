@@ -5,7 +5,7 @@ function display () {
     // to 0-4, rounds to a whole number then compairs it
     // to an integer and displays the corresponding bar
     // graph if it equals 0 it clears the screen
-    if (Math.round(Math.map(moisture_reading, 0, 1023, 0, 4)) == 4) {
+    if (Math.round(Math.map(moisture_reading, 0, 815, 0, 4)) == 4) {
         basic.showLeds(`
             . . . . .
             . . . . #
@@ -13,7 +13,7 @@ function display () {
             . . # # #
             . # # # #
             `)
-    } else if (Math.round(Math.map(moisture_reading, 0, 1023, 0, 4)) == 3) {
+    } else if (Math.round(Math.map(moisture_reading, 0, 815, 0, 4)) == 3) {
         basic.showLeds(`
             . . . . .
             . . . . .
@@ -21,7 +21,7 @@ function display () {
             . . # # .
             . # # # .
             `)
-    } else if (Math.round(Math.map(moisture_reading, 0, 1023, 0, 4)) == 2) {
+    } else if (Math.round(Math.map(moisture_reading, 0, 815, 0, 4)) == 2) {
         basic.showLeds(`
             . . . . .
             . . . . .
@@ -29,7 +29,7 @@ function display () {
             . . # . .
             . # # . .
             `)
-    } else if (Math.round(Math.map(moisture_reading, 0, 1023, 0, 4)) == 1) {
+    } else if (Math.round(Math.map(moisture_reading, 0, 815, 0, 4)) == 1) {
         basic.showLeds(`
             . . . . .
             . . . . .
