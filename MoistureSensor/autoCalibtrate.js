@@ -45,6 +45,13 @@ function setup() {
                 basic.pause(500)
                 basic.clearScreen()
             }
+            basic.showLeds(`
+                . . # . .
+                . # # # .
+                # . # . #
+                . . # . .
+                . . # . .
+                `)
         }
         if (Cal1 == 3) {
             if (input.buttonIsPressed(Button.A)) {
